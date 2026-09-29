@@ -1,11 +1,7 @@
-import { useState } from 'react';
-import { ArrowRight, Mail, Terminal, Sparkles, BookOpen } from 'lucide-react';
+import { ArrowRight, Mail, Terminal, Sparkles, BookOpen, Code2 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
-import studentIllustration from '../assets/images/student_developer_illustration_1790679754925.jpg';
 
 export function Hero() {
-  const [imgError, setImgError] = useState(false);
-
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -95,38 +91,97 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Visual illustration representing a first-year student developer */}
+          {/* Right Column: Clean Vector Developer Illustration */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md">
               {/* Subtle aesthetic card frame */}
-              <div className="relative bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden p-3 sm:p-4">
-                <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-slate-100 flex items-center justify-center">
-                  {!imgError ? (
-                    <img
-                      src={studentIllustration}
-                      alt="Illustration of a first-semester B.Tech student studying and coding at a desk"
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-102"
-                      onError={() => setImgError(true)}
-                    />
-                  ) : (
-                    /* Fallback clean SVG container */
-                    <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-slate-50">
-                      <div className="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
-                        <Terminal className="w-8 h-8" />
+              <div className="relative bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden p-4 sm:p-5">
+                
+                {/* Modern Student Engineer Vector Illustration */}
+                <div className="relative aspect-square w-full rounded-xl bg-gradient-to-b from-blue-50/70 via-slate-50 to-slate-100 flex flex-col items-center justify-between p-5 border border-slate-100 overflow-hidden">
+                  
+                  {/* Decorative Terminal Header on the Desk */}
+                  <div className="w-full bg-white/90 backdrop-blur-xs rounded-lg border border-slate-200/90 shadow-2xs p-3 mb-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
                       </div>
-                      <h4 className="text-base font-bold text-slate-800">Lekith Kumar Reddy</h4>
-                      <p className="text-xs text-slate-500 mt-1">B.Tech Student & Aspiring Engineer</p>
-                      <div className="mt-3 text-[11px] text-blue-600 font-mono bg-blue-50 px-2.5 py-1 rounded">
-                        print("Hello World!")
+                      <span className="text-[10px] font-mono text-slate-400">btech_student.py</span>
+                    </div>
+                    <div className="font-mono text-[11px] text-slate-700 space-y-1">
+                      <div className="text-blue-600 font-semibold">
+                        <span className="text-slate-400">01</span> class <span className="text-slate-900">StudentEngineer</span>:
+                      </div>
+                      <div className="text-slate-600 pl-4">
+                        <span className="text-slate-400">02</span> term = <span className="text-emerald-700">"1st Semester"</span>
+                      </div>
+                      <div className="text-slate-600 pl-4">
+                        <span className="text-slate-400">03</span> passion = [<span className="text-emerald-700">"Python"</span>, <span className="text-emerald-700">"Web"</span>, <span className="text-emerald-700">"GenAI"</span>]
+                      </div>
+                      <div className="text-blue-600 pl-4">
+                        <span className="text-slate-400">04</span> def <span className="text-slate-900 font-semibold">build_future</span>(self):
+                      </div>
+                      <div className="text-emerald-700 pl-8 font-semibold">
+                        <span className="text-slate-400">05</span> return <span className="text-blue-700">"Continuous Learning 🚀"</span>
                       </div>
                     </div>
-                  )}
+                  </div>
+
+                  {/* Central Student Developer Character Silhouette & Laptop */}
+                  <div className="relative flex-1 flex items-center justify-center w-full">
+                    <svg
+                      viewBox="0 0 240 120"
+                      className="w-48 h-auto"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-label="Student coding at computer"
+                    >
+                      {/* Desk surface */}
+                      <rect x="10" y="105" width="220" height="8" rx="4" fill="#cbd5e1" />
+                      
+                      {/* Laptop Base & Screen */}
+                      <rect x="75" y="55" width="90" height="50" rx="4" fill="#1e293b" />
+                      <rect x="80" y="60" width="80" height="40" rx="2" fill="#0f172a" />
+                      {/* Laptop code glow */}
+                      <rect x="85" y="66" width="35" height="3" rx="1.5" fill="#38bdf8" />
+                      <rect x="85" y="73" width="55" height="3" rx="1.5" fill="#a78bfa" />
+                      <rect x="85" y="80" width="45" height="3" rx="1.5" fill="#34d399" />
+                      <rect x="85" y="87" width="25" height="3" rx="1.5" fill="#f472b6" />
+                      <rect x="70" y="102" width="100" height="4" rx="2" fill="#64748b" />
+                      
+                      {/* Coffee Mug */}
+                      <rect x="185" y="82" width="16" height="23" rx="3" fill="#3b82f6" />
+                      <path d="M201 88 C 206 88, 206 97, 201 97" stroke="#3b82f6" strokeWidth="2.5" fill="none" />
+                      <path d="M190 77 Q 192 72, 194 77" stroke="#94a3b8" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M194 76 Q 196 71, 198 76" stroke="#94a3b8" strokeWidth="1.5" strokeLinecap="round" />
+
+                      {/* Notebook */}
+                      <rect x="35" y="92" width="28" height="13" rx="2" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1" />
+                      <line x1="39" y1="96" x2="55" y2="96" stroke="#64748b" strokeWidth="1" />
+                      <line x1="39" y1="100" x2="50" y2="100" stroke="#64748b" strokeWidth="1" />
+                    </svg>
+                  </div>
+
+                  {/* Status Tag */}
+                  <div className="w-full flex items-center justify-between pt-2 border-t border-slate-200/60 text-[11px] text-slate-500">
+                    <span className="flex items-center gap-1.5 font-medium text-slate-700">
+                      <Code2 className="w-3.5 h-3.5 text-blue-600" />
+                      Hands-on Code Practice
+                    </span>
+                    <span className="text-emerald-700 font-semibold flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                      Active Student
+                    </span>
+                  </div>
+
                 </div>
 
                 {/* Quiet caption underneath */}
-                <div className="mt-3 px-2 flex items-center justify-between text-xs text-slate-500">
-                  <span className="font-medium text-slate-700">Lekith Kumar Reddy Amasa</span>
-                  <span>1st Semester · B.Tech</span>
+                <div className="mt-3 px-1 flex items-center justify-between text-xs text-slate-500">
+                  <span className="font-semibold text-slate-800">Lekith Kumar Reddy Amasa</span>
+                  <span className="font-medium text-blue-600">B.Tech First Year</span>
                 </div>
               </div>
             </div>
